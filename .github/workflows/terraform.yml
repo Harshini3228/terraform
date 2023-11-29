@@ -21,8 +21,8 @@ jobs:
         with:
           terraform_version: 0.15.0    
 
-      - name: Azure Login
-        run: az login --service-principal -u 9f853451-c0f9-4f88-be1d-2e578bbb76be -p 3zf8Q~R9q4uPA9t2p.u2bxUNr5ygVC5oVcpnacoo --tenant 4284bc2c-7bea-4e03-b48a-128cd2886ddb
+      # - name: Azure Login
+      #   run: az login --service-principal -u 9f853451-c0f9-4f88-be1d-2e578bbb76be -p 3zf8Q~R9q4uPA9t2p.u2bxUNr5ygVC5oVcpnacoo --tenant 4284bc2c-7bea-4e03-b48a-128cd2886ddb
         # uses: azure/actions/login@v1
         # with:
         #   creds: ${{ secrets.AZURE_CREDENTIALS }}
@@ -34,12 +34,12 @@ jobs:
       #    allow-no-subscriptions: true
       #    enable-AzPSSession: true
 
-      - name: Azure CLI script
-        uses: azure/CLI@v1
-        with:
-          azcliversion: latest
-          inlineScript: |
-            az account show
+      # - name: Azure CLI script
+      #   uses: azure/CLI@v1
+      #   with:
+      #     azcliversion: latest
+      #     inlineScript: |
+      #       az account show
 
       - name: Terraform Init
         run: terraform init
