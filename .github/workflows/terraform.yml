@@ -20,11 +20,14 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: 0.15.0
-
       - name: Azure Login
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+        run: az login --service-principal --username 21560b63-3860-4c41-b3ad-854b0c9c5c4a --tenant 24041256-c834-468a-b7e7-c4dc34322cfe --password /Users/harshinirajagopal/tmpcjwn_9rc.pem
+          
+
+      # - name: Azure Login
+      #   uses: azure/login@v1
+      #   with:
+      #     creds: ${{ secrets.AZURE_CREDENTIALS }}
       # - name: Azure Login
       #   uses: azure/login@v1
       #   with:
