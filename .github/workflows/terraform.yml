@@ -36,8 +36,6 @@ jobs:
       - name: Terraform Plan
         run: terraform plan -var="client_secret=${{ secrets.ARM_CLIENT_SECRET }}" -var="client_id=${{ secrets.ARM_CLIENT_ID }}" -var="tenant_id=${{ secrets.ARM_TENANT_ID }}" -var="subscription_id=${{ secrets.ARM_SUBSCRIPTION_ID }}"
 
-      # - name: Azure Login
-      #   uses: azure/login@v1
-      #   with:
-      #     creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Terraform Apply
+        run:  terraform apply -auto-approve -input=false
 
