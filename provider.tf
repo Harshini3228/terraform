@@ -7,7 +7,7 @@ terraform {
   }
   backend "azurerm" {
     resource_group_name  = "Harshini-Training"
-    storage_account_name = "harshinistorageaccount"
+    storage_account_name = "myhasurastorageaccount"
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
   }
