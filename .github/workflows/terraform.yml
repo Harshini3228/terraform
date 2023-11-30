@@ -25,12 +25,16 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+   
+      - name : Terraform Login
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform fmt
+        id: fmt
+        run: terraform fmt -check
+        continue-on-error: true
 
       - name: Terraform Init
+        id: init
         run: terraform init
 
-      - name: Terraform Plan
-        run: terraform plan
-
-      # - name: Terraform Apply
-      #   run: terraform apply -auto-approve
